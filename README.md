@@ -17,7 +17,7 @@ Please install them by following the instructions at their homepage.
 ### [Modeling class introduction](https://github.com/shhong/a310_cns_2022/tree/main/class_intro) — January 24, 2022
 In this introduction class, we will go through an overview of building the models of neurons. We will dicuss fundamental concepts such as the compartmental representation of a neuron as a spatially extended electrophysiological device. We will also discusse steps to construct those model neurons and simulate them in the NEURON simulator.
 
-### [Modeling class 1](https://github.com/shhong/a310_cns_2022/tree/main/class_1) — Febuary 24, 2022
+### [Modeling class 1](https://github.com/shhong/a310_cns_2022/tree/main/class_1) — Febuary 10, 2022
 In this class, we will work with a neuron model reconstructed from an experimentally measured morphology. We will discuss how to construct and run the simulations of electrophysiology experiments.
 
 ### [Modeling class 2](https://github.com/shhong/a310_cns_2022/tree/main/class_2) — Febuary 17, 2022
