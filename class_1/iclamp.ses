@@ -1,0 +1,44 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[4]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin PointProcessManager
+{
+load_file("pointman.hoc")
+}
+{
+dend4_1121 ocbox_ = new PointProcessManager(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("IClamp") i = mt.selected()
+ms[i] = new MechanismStandard("IClamp")
+ms[i].set("del", 50, 0)
+ms[i].set("dur", 150, 0)
+ms[i].set("amp", 0.1, 0)
+mt.select("IClamp") i = mt.selected() maction(i)
+hoc_ac_ = 0.357143
+sec.sec move() d1.flip_to(0)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessManager", 290, 363, 329.28, 390.72)
+}
+objref ocbox_
+//End PointProcessManager
+
+{
+save_window_ = new Graph(0)
+save_window_.size(0,300,-75,-67.7)
+scene_vector_[3] = save_window_
+{save_window_.view(0, -75, 300, 7.3, 288, 103, 492.48, 204.16)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("v(.5)", 1, 1, 0.8, 0.9, 2)
+}
+objectvar scene_vector_[1]
+{doNotify()}
