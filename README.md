@@ -30,8 +30,9 @@ In this class, we will learn more about active mechanisms and network simulation
 In the last class, we will go through several examples of network models and discuss strategies to build network models.
 
 ## Homework
-### [Homework 1](https://github.com/shhong/a310_cns_2022/tree/main/homework_1) — Febraury 21, 2022
+### [Homework 1](https://github.com/shhong/a310_cns_2022/tree/main/homework_1/homework_1.ipynb) — Febraury 21, 2022
 
+### [Homework 2](https://github.com/shhong/a310_cns_2022/tree/main/homework_2/homework_2.ipynb) — March 11, 2022
 
 ---
 _Written by Sungho Hong, Computational Neuroscience Unit, Okinawa Institutes of Science and Technology_
