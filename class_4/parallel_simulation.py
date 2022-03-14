@@ -1,6 +1,8 @@
 
 import numpy as np
 from neuron import h, gui
+from neuron import load_mechanisms
+load_mechanisms("mod.files")
 
 
 from cell_template import Cell
@@ -68,7 +70,7 @@ for i in range(Ncells):
 
     
 gexc = 3e-3      # g_exc = 3 nS
-ginh = 5.*gexc   # g_inh/g_exc = 5
+ginh = 6.*gexc   # g_inh/g_exc = 5
 
 
 for i in pnm.gidlist:
