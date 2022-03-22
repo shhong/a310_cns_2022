@@ -1,8 +1,4 @@
-
 COMMENT
-26 Ago 2002 Modification of original channel to allow variable time step and to correct an initialization error.
-    Done by Michael Hines(michael.hines@yale.e) and Ruggero Scorcioni(rscorcio@gmu.edu) at EU Advance Course in Computational Neuroscience. Obidos, Portugal
-
 kca.mod
 
 Calcium-dependent potassium channel
@@ -12,12 +8,51 @@ taken from
 Reuveni et al (1993) -- neocortical cells
 
 Author: Zach Mainen, Salk Institute, 1995, zach@salk.edu
-	
+
+26 Ago 2002 Modification of original channel to allow 
+variable time step and to correct an initialization error.
+Done by Michael Hines(michael.hines@yale.e) and 
+Ruggero Scorcioni(rscorcio@gmu.edu) at EU Advance Course 
+in Computational Neuroscience. Obidos, Portugal
+
+20110202 made threadsafe by Ted Carnevale
+20120105 SOLVE switched to derivimplicit from euler - TMM
+20120106 SOLVE switched back to cnexp because ode linear in n -TMM
+Special comment:
+
+This mechanism was designed to be run at a single operating 
+temperature--37 deg C--which can be specified by the hoc 
+assignment statement
+celsius = 37
+This mechanism is not intended to be used at other temperatures, 
+or to investigate the effects of temperature changes.
+
+Zach Mainen created this particular model by adapting conductances 
+from lower temperature to run at higher temperature, and found it 
+necessary to reduce the temperature sensitivity of spike amplitude 
+and time course.  He accomplished this by increasing the net ionic 
+conductance through the heuristic of changing the standard HH 
+formula
+  g = gbar*product_of_gating_variables
+to
+  g = tadj*gbar*product_of_gating_variables
+where
+  tadj = q10^((celsius - temp)/10)
+  temp is the "reference temperature" (at which the gating variable
+    time constants were originally determined)
+  celsius is the "operating temperature"
+
+Users should note that this is equivalent to changing the channel 
+density from gbar at the "reference temperature" temp (the 
+temperature at which the at which the gating variable time 
+constants were originally determined) to tadj*gbar at the 
+"operating temperature" celsius.
 ENDCOMMENT
 
 INDEPENDENT {t FROM 0 TO 1 WITH 1 (ms)}
 
 NEURON {
+    THREADSAFE
 	SUFFIX kca
 	USEION k READ ek WRITE ik
 	USEION ca READ cai
@@ -102,14 +137,3 @@ PROCEDURE rates(cai(mM)) {
 :        tinc = -dt * tadj
 :        nexp = 1 - exp(tinc/ntau)
 }
-
-
-
-
-
-
-
-
-
-
-
