@@ -35,6 +35,9 @@ In the last class, we will go through several examples of network models and dis
 ### [Homework 2](https://github.com/shhong/a310_cns_2022/tree/main/homework_2/homework_2.ipynb) — March 11, 2022
 
 ### [Homework 3](https://github.com/shhong/a310_cns_2022/tree/main/homework_3/homework_3.ipynb) — April 8, 2022
+
+### [Homework 4](https://github.com/shhong/a310_cns_2022/tree/main/homework_4/homework_4.ipynb) — April 28, 2022
+
 ---
 _Written by Sungho Hong, Computational Neuroscience Unit, Okinawa Institutes of Science and Technology_
 
